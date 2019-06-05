@@ -1,7 +1,7 @@
 {
   "name": "wp-transaltions/t15s-registry",
   "type": "library",
-  "description": "Allows loading translation files from a custom GlotPress site running T15S",
+  "description": "Allows loading translation files from T15S",
   "homepage": "https://github.com/wp-transaltions/t15s-registry",
   "license": "GPL-2.0-or-later",
   "authors": [
