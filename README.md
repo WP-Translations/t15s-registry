@@ -1,4 +1,4 @@
-# Traduttore Registry
+# T15S Registry
 
 Allows loading translation files from TranslationsPress.
 
