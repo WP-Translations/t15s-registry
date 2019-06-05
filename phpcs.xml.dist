@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ruleset name="Coding Standard for T15S Registry">
+	<description>Coding Standard for T15S Registry</description>
+
+	<rule ref="WP_Translations"/>
+
+	<file>.</file>
+
+	<exclude-pattern>/tests/*</exclude-pattern>
+</ruleset>

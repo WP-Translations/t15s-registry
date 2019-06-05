@@ -1,0 +1,51 @@
+{
+  "name": "wp-transaltions/t15s-registry",
+  "type": "library",
+  "description": "Allows loading translation files from a custom GlotPress site running T15S",
+  "homepage": "https://github.com/wp-transaltions/t15s-registry",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "WP-Translations Teamm",
+      "email": "contact@wp-translations.pro",
+      "homepage": "https://wp-translations.pro",
+      "role": "Company"
+    }
+  ],
+  "keywords": [
+    "wordpress",
+    "glotpress",
+    "translations"
+  ],
+  "require": {
+    "php": ">=7.1"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+    "phpunit/phpunit": "^6.5.8",
+    "wearerequired/coding-standards": "^1.0"
+  },
+  "scripts": {
+    "format": "vendor/bin/phpcbf --standard=phpcs.xml.dist --report-summary --report-source",
+    "lint": "vendor/bin/phpcs --standard=phpcs.xml.dist --report-summary --report-source",
+    "test": "vendor/bin/phpunit"
+  },
+  "autoload": {
+    "files": [
+      "inc/namespace.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "WP_Translations\\T15S_Registry\\Tests\\": "tests/phpunit/tests"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.0-dev"
+    }
+  }
+}
