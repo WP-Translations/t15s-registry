@@ -69,19 +69,21 @@ function add_project( $type, $slug, $api_url ) {
 			$installed_translations = wp_get_installed_translations( $type . 's' );
 
 			foreach ( (array) $translations['translations'] as $translation ) {
-				if ( isset( $installed_translations[ $slug ][ $translation['language'] ] ) && $translation['updated'] ) {
-					$local  = new DateTime( $installed_translations[ $slug ][ $translation['language'] ]['PO-Revision-Date'] );
-					$remote = new DateTime( $translation['updated'] );
+				if ( in_array( $translation['language'], get_available_languages() ) ) {
+					if ( isset( $installed_translations[ $slug ][ $translation['language'] ] ) && $translation['updated'] ) {
+						$local  = new DateTime( $installed_translations[ $slug ][ $translation['language'] ]['PO-Revision-Date'] );
+						$remote = new DateTime( $translation['updated'] );
 
-					if ( $local >= $remote ) {
-						continue;
+						if ( $local >= $remote ) {
+							continue;
+						}
 					}
+
+					$translation['type'] = $type;
+					$translation['slug'] = $slug;
+
+					$value->translations[] = $translation;
 				}
-
-				$translation['type'] = $type;
-				$translation['slug'] = $slug;
-
-				$value->translations[] = $translation;
 			}
 
 			return $value;
