@@ -19,7 +19,7 @@ class GetTranslations extends WP_UnitTestCase {
 	 * Verifies that translation information is loaded from GlotPress.
 	 */
 	public function test_plugin_translations() {
-		$api_url  = 'https://translations.wp-translations.pro/api/translations/wp-translations/wp-transaltions-tester/';
+		$api_url  = 'https://translationspress.com/api/translations/wp-translations/wp-transaltions-tester/';
 		$expected = [ 'foo' => 'bar' ];
 
 		add_filter(
@@ -48,7 +48,7 @@ class GetTranslations extends WP_UnitTestCase {
 	 * Verifies that API results are cached in a transient.
 	 */
 	public function test_data_is_stored_in_transient() {
-		$api_url  = 'https://translations.wp-translations.pro/api/translations/wp-translations/wp-transaltions-tester/';
+		$api_url  = 'https://translationspress.com/api/translations/wp-translations/wp-transaltions-tester/';
 		$expected = [ 'foo' => 'bar' ];
 
 		add_filter(
@@ -80,7 +80,7 @@ class GetTranslations extends WP_UnitTestCase {
 	 * Verifies that subsequent requests are served from cache.
 	 */
 	public function test_return_cached_data_on_subsequent_requests() {
-		$api_url  = 'https://translations.wp-translations.pro/api/translations/wp-translations/wp-transaltions-tester/';
+		$api_url  = 'https://translationspress.com/api/translations/wp-translations/wp-transaltions-tester/';
 		$expected = [ 'foo' => 'bar' ];
 
 		add_filter(

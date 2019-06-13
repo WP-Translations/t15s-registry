@@ -28,12 +28,12 @@ Here's an example of how you can use that function:
 \WP_Translations\T15S_Registry\add_project(
 	'plugin',
 	'example-plugin',
-	'https://translations.wp-translations.pro/translate/api/translations/acme/acme-plugin/'
+	'https://translationspress.com/translate/api/translations/acme/acme-plugin/'
 );
 
 \WP_Translations\T15S_Registry\add_project(
 	'theme',
 	'example-theme',
-	'https://translations.wp-translations.pro/translate/api/translations/acme/acme-theme/'
+	'https://translationspress.com/translate/api/translations/acme/acme-theme/'
 );
 ```

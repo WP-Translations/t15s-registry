@@ -23,7 +23,7 @@ class AddProject extends WP_UnitTestCase {
 
 		$type     = 'plugin';
 		$slug     = 'wp-transaltions-tester';
-		$api_url  = 'https://translations.wp-translations.pro/translate/api/translations/wp-translations/wp-transaltions-tester/';
+		$api_url  = 'https://translationspress.com/translate/api/translations/wp-translations/wp-transaltions-tester/';
 		$expected = [ 'foo' => 'bar' ];
 
 		add_project( $type, $slug, $api_url );
@@ -64,7 +64,7 @@ class AddProject extends WP_UnitTestCase {
 
 		$type     = 'plugin';
 		$slug     = 'wp-transaltions-tester';
-		$api_url  = 'https://translations.wp-translations.pro/translate/api/translations/required/wp-transaltions-tester/';
+		$api_url  = 'https://translationspress.com/translate/api/translations/required/wp-transaltions-tester/';
 		$expected = [ 'foo' => 'bar' ];
 
 		add_project( $type, $slug, $api_url );
@@ -98,10 +98,10 @@ class AddProject extends WP_UnitTestCase {
 	public function test_get_translation_updates() {
 		$type    = 'plugin';
 		$slug    = 'internationalized-plugin'; // Part of the WordPress test suite.
-		$api_url = 'https://translations.wp-translations.pro/translate/api/translations/required/internationalized-plugin/';
+		$api_url = 'https://translationspress.com/translate/api/translations/required/internationalized-plugin/';
 		$now     = ( new DateTime() )->format( 'Y-m-d H:i:s' );
 		$locale  = 'de_DE';
-		$package = 'https://translations.wp-translations.pro/content/traduttore/internationalized-plugin-de_DE.zip';
+		$package = 'https://translationspress.com/content/traduttore/internationalized-plugin-de_DE.zip';
 
 		$body = [
 			'translations' => [
@@ -152,10 +152,10 @@ class AddProject extends WP_UnitTestCase {
 	public function test_get_translation_updates_outdated_package() {
 		$type    = 'plugin';
 		$slug    = 'internationalized-plugin'; // Part of the WordPress test suite.
-		$api_url = 'https://translations.wp-translations.pro/translate/api/translations/wp-translations/wp-translations-tester/';
+		$api_url = 'https://translationspress.com/translate/api/translations/wp-translations/wp-translations-tester/';
 		$now     = ( new DateTime() )->setDate( 2000, 1, 1 )->format( 'Y-m-d H:i:s' );
 		$locale  = 'de_DE';
-		$package = 'https://translations.wp-translations.pro/wp-content/traduttore/wp-translations-tester-fr_FR.zip';
+		$package = 'https://translationspress.com/wp-content/traduttore/wp-translations-tester-fr_FR.zip';
 
 		$body = [
 			'translations' => [
@@ -198,7 +198,7 @@ class AddProject extends WP_UnitTestCase {
 	public function test_get_translation_updates_empty_api_result() {
 		$type    = 'plugin';
 		$slug    = 'wp-translations-testern'; // Part of the WordPress test suite.
-		$api_url = 'https://translations.wp-translations.pro/translate/api/translations/wp-translations/wp-translations-tester/';
+		$api_url = 'https://translationspress.com/translate/api/translations/wp-translations/wp-translations-tester/';
 		$body    = [];
 
 		add_project( $type, $slug, $api_url );
