@@ -7,6 +7,8 @@
  * @package WP_Translations\T15S_registry
  */
 
+use DateTime;
+
 class YOUR_AWESOME_PROJECT_SLUG_Language_Packs {
 
 	public function __construct( $type, $slug, $api_url ) {
