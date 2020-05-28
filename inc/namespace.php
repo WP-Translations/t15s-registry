@@ -158,6 +158,10 @@ class YOUR_AWESOME_PROJECT_SLUG_Language_Packs {
 		$transient_key = 't15s-registry-' . $slug . '-' . $type;
 		$translations  = get_site_transient( $transient_key );
 
+		if ( false !== $translations ) {
+			return $translations;
+		}
+
 		if ( ! is_object( $translations ) ) {
 			$translations = new \stdClass();
 		}
