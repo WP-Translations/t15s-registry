@@ -171,16 +171,15 @@ class YOUR_AWESOME_PROJECT_SLUG_Language_Packs {
 		}
 
 		$result = json_decode( wp_remote_retrieve_body( wp_remote_get( $url, [ 'timeout' => 2 ] ) ), true );
-		if ( is_array( $result ) ) {
-			$translations->{$slug}       = $result;
-			$translations->_last_checked = time();
-
-			set_site_transient( $transient_key, $translations );
-			return $result;
+		if ( ! is_array( $result ) ) {
+			$result = [];
 		}
 
-		// Nothing found.
-		return [];
+		$translations->{$slug}       = $result;
+		$translations->_last_checked = time();
+
+		set_site_transient( $transient_key, $translations );
+		return $result;
 	}
 
 }
